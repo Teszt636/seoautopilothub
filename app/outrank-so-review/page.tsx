@@ -194,45 +194,99 @@ export default function OutrankReviewPage() {
             <thead>
               <tr className="border-b border-slate-200">
                 <th className="px-4 py-3 text-sm font-semibold text-slate-900">
-                  Option
+                  Comparison point
                 </th>
                 <th className="px-4 py-3 text-sm font-semibold text-slate-900">
-                  Best use
+                  Outrank.so
                 </th>
                 <th className="px-4 py-3 text-sm font-semibold text-slate-900">
-                  Main tradeoff
+                  Manual freelance writer workflow
+                </th>
+                <th className="px-4 py-3 text-sm font-semibold text-slate-900">
+                  Generic AI writer workflow
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-slate-200">
                 <td className="px-4 py-4 text-sm font-medium text-slate-900">
-                  Outrank.so
+                  Best use case
                 </td>
                 <td className="px-4 py-4 text-sm leading-6 text-slate-700">
                   Teams that want a more repeatable AI-assisted SEO publishing workflow.
                 </td>
                 <td className="px-4 py-4 text-sm leading-6 text-slate-700">
-                  Still depends on strategy, review, and site quality to work well.
+                  Businesses that want more human nuance and can manage briefing and editing well.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Teams that mainly need fast draft production and already have strong internal process controls.
                 </td>
               </tr>
               <tr className="border-b border-slate-200">
                 <td className="px-4 py-4 text-sm font-medium text-slate-900">
-                  Manual freelance writer workflow
+                  Publishing consistency
                 </td>
                 <td className="px-4 py-4 text-sm leading-6 text-slate-700">
-                  Businesses that need stronger human nuance and can manage briefs well.
+                  Stronger than a fully manual process when the team follows a clear workflow.
                 </td>
                 <td className="px-4 py-4 text-sm leading-6 text-slate-700">
-                  Usually slower, more coordination-heavy, and harder to scale consistently.
+                  Often depends heavily on freelancer availability and briefing quality.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Can be fast, but consistency often varies without extra process layers.
+                </td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="px-4 py-4 text-sm font-medium text-slate-900">
+                  SEO workflow support
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  More aligned with ongoing SEO content operations than a plain writing tool.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Usually depends on the writer and your own external SEO process.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Usually stronger for drafting than for full SEO workflow management.
+                </td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="px-4 py-4 text-sm font-medium text-slate-900">
+                  Human review needed
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Still necessary for accuracy, positioning, and internal linking decisions.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Still necessary for SEO alignment, revisions, and consistency across pages.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Usually high because faster drafts can still be generic or misaligned.
+                </td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="px-4 py-4 text-sm font-medium text-slate-900">
+                  Scalability for small teams
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Potentially strong if the team wants to systemize output without a large content staff.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Often harder to scale quickly without more coordination and budget.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Easy to scale draft volume, but quality control can become the bottleneck.
                 </td>
               </tr>
               <tr>
                 <td className="px-4 py-4 text-sm font-medium text-slate-900">
-                  Generic AI writer workflow
+                  Main limitation
                 </td>
                 <td className="px-4 py-4 text-sm leading-6 text-slate-700">
-                  Teams that only need quick drafting help and already have strong process controls.
+                  It still depends on strategy, review, and overall site quality to work well.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Usually slower, more coordination-heavy, and less process-consistent.
                 </td>
                 <td className="px-4 py-4 text-sm leading-6 text-slate-700">
                   Often produces faster drafts but weaker workflow structure and more QA burden.
