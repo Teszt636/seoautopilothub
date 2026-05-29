@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
     "A comparison placeholder for small businesses and agencies evaluating Outrank.so vs Surfer SEO.",
   path: "/outrank-so-vs-surfer-seo",
   type: "article",
+  noIndex: true,
 });
 
 export default function Page() {

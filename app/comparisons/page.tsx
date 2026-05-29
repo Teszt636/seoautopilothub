@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
   description:
     "Explore comparison pages for AI SEO automation tools and workflow-focused content systems.",
   path: "/comparisons",
+  noIndex: true,
 });
 
 export default function ComparisonsIndexPage() {

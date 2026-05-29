@@ -58,7 +58,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/ai-seo-automation-for-small-businesses"
-                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                className="inline-flex items-center justify-center rounded-full border border-slate-900 bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
               >
                 Read the practical guide
               </Link>
@@ -212,7 +212,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/guides"
-              className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="inline-flex items-center justify-center rounded-full border border-slate-900 bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
             >
               Explore the guides
             </Link>

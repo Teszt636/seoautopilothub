@@ -31,7 +31,7 @@ const faqSchema = {
       name: "Who is Outrank.so best suited for?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "It appears best suited to lean teams such as small businesses, solo founders, and agencies that need a more repeatable content workflow.",
+        text: "This initial editorial review suggests it is best suited to lean teams such as small businesses, solo founders, and agencies that need a more repeatable content workflow.",
       },
     },
   ],
@@ -75,7 +75,7 @@ export default function OutrankReviewPage() {
       <ProseBlock
         title="Quick verdict"
         paragraphs={[
-          "Outrank.so appears to be a promising fit for small businesses, solo founders, and smaller agencies that want a lean AI SEO automation workflow rather than a sprawling enterprise platform.",
+          "This is an initial editorial review rather than a full lab-style product test. Based on the product positioning and workflow promise, Outrank.so appears to be a promising fit for small businesses, solo founders, and smaller agencies that want a lean AI SEO automation workflow rather than a sprawling enterprise platform.",
           "Its strongest use case is helping teams publish more consistently. Its weakest use case is expecting the tool alone to replace strategy, editorial review, or broader SEO execution.",
         ]}
       />
@@ -95,6 +95,30 @@ export default function OutrankReviewPage() {
           "Local businesses building service and supporting content",
           "Agencies managing recurring SEO execution for several clients",
           "Solo founders who need a system, not just a writing assistant",
+        ]}
+      />
+      <ProseBlock
+        title="Best for"
+        paragraphs={[
+          "Outrank.so looks best for teams that already know they need more publishing consistency but do not want to build a large content operation around that goal.",
+        ]}
+        bullets={[
+          "Small businesses with limited writing bandwidth",
+          "Local service brands building topical coverage steadily",
+          "Solo founders who need structure more than advanced enterprise reporting",
+          "Agencies trying to speed up first-draft production without skipping review",
+        ]}
+      />
+      <ProseBlock
+        title="Not best for"
+        paragraphs={[
+          "It may be a weaker fit for teams that need deep enterprise workflows, highly specialized editorial review layers, or a tool that solves technical SEO and content strategy on its own.",
+        ]}
+        bullets={[
+          "Businesses expecting guaranteed rankings from software alone",
+          "Teams without time to review or improve generated drafts",
+          "Organizations needing heavy custom editorial approval systems",
+          "Sites with weak technical SEO foundations that have not been addressed yet",
         ]}
       />
       <ProseBlock
@@ -138,9 +162,9 @@ export default function OutrankReviewPage() {
         ]}
       />
       <ProseBlock
-        title="Suggested workflow"
+        title="Suggested small business workflow"
         paragraphs={[
-          "A sensible workflow is to start with topic clusters, define target pages, use Outrank.so to accelerate drafting, then review every piece for factual accuracy, conversion intent, and internal link fit.",
+          "A sensible small business workflow is to start with topic clusters, define target pages, use Outrank.so to accelerate drafting, then review every piece for factual accuracy, conversion intent, and internal link fit.",
         ]}
         bullets={[
           "Map keywords to service clusters or funnel stages",
@@ -149,6 +173,75 @@ export default function OutrankReviewPage() {
           "Publish with internal links and update older pages regularly",
         ]}
       />
+      <ProseBlock
+        title="Suggested agency workflow"
+        paragraphs={[
+          "Agencies should treat the tool as a production accelerator inside a defined client delivery system rather than as a replacement for strategy or senior editorial review.",
+        ]}
+        bullets={[
+          "Create client-specific topic maps before drafting starts",
+          "Generate draft batches for similar intent clusters",
+          "Run account-manager review for positioning, claims, and service nuance",
+          "Publish with internal linking, QA, and update cycles built into retainers",
+        ]}
+      />
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+          Quick comparison table
+        </h2>
+        <div className="mt-6 overflow-x-auto">
+          <table className="min-w-full border-collapse text-left">
+            <thead>
+              <tr className="border-b border-slate-200">
+                <th className="px-4 py-3 text-sm font-semibold text-slate-900">
+                  Option
+                </th>
+                <th className="px-4 py-3 text-sm font-semibold text-slate-900">
+                  Best use
+                </th>
+                <th className="px-4 py-3 text-sm font-semibold text-slate-900">
+                  Main tradeoff
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-200">
+                <td className="px-4 py-4 text-sm font-medium text-slate-900">
+                  Outrank.so
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Teams that want a more repeatable AI-assisted SEO publishing workflow.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Still depends on strategy, review, and site quality to work well.
+                </td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="px-4 py-4 text-sm font-medium text-slate-900">
+                  Manual freelance writer workflow
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Businesses that need stronger human nuance and can manage briefs well.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Usually slower, more coordination-heavy, and harder to scale consistently.
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 text-sm font-medium text-slate-900">
+                  Generic AI writer workflow
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Teams that only need quick drafting help and already have strong process controls.
+                </td>
+                <td className="px-4 py-4 text-sm leading-6 text-slate-700">
+                  Often produces faster drafts but weaker workflow structure and more QA burden.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
       <section className="rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-lg shadow-slate-300/70">
         <h2 className="text-2xl font-semibold tracking-tight">Final verdict</h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-200">
