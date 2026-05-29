@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { AffiliateButton } from "@/components/affiliate-button";
+import { AffiliateNote } from "@/components/affiliate-note";
 import { CardGrid, PageSection } from "@/components/ui";
 import { articleCards, comparisonLinks, guideLinks } from "@/lib/content";
 import { buildMetadata, siteConfig } from "@/lib/site";
@@ -189,6 +190,7 @@ export default function Home() {
                   placement="homepage-recommended-tool"
                   toolName="Outrank.so"
                 />
+                <AffiliateNote />
               </div>
             </div>
           </div>

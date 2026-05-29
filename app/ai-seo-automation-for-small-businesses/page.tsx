@@ -1,5 +1,6 @@
 import { ArticleLayout } from "@/components/article-layout";
 import { AffiliateButton } from "@/components/affiliate-button";
+import { AffiliateNote } from "@/components/affiliate-note";
 import { JsonLd } from "@/components/json-ld";
 import { ProseBlock } from "@/components/ui";
 import { buildBreadcrumbs } from "@/lib/content";
@@ -161,6 +162,7 @@ export default function PillarGuidePage() {
             toolName="Outrank.so"
           />
         </div>
+        <AffiliateNote className="mt-4" />
       </section>
     </ArticleLayout>
   );

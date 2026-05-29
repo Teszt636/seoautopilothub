@@ -1,4 +1,5 @@
 import { AffiliateButton } from "@/components/affiliate-button";
+import { AffiliateNote } from "@/components/affiliate-note";
 import { ArticleLayout } from "@/components/article-layout";
 import { JsonLd } from "@/components/json-ld";
 import { ProseBlock } from "@/components/ui";
@@ -164,6 +165,7 @@ export default function OutrankReviewPage() {
             toolName="Outrank.so"
           />
         </div>
+        <AffiliateNote className="mt-4 text-slate-300" />
       </section>
     </ArticleLayout>
   );

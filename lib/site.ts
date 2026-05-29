@@ -5,7 +5,7 @@ export const siteConfig = {
   domain: "https://www.seoautopilothub.com",
   description:
     "Practical guides, reviews, and workflows for AI SEO automation built for small businesses, agencies, and solo founders.",
-  affiliateUrl: "https://outrank.so/?via=affiliate-placeholder",
+  affiliateUrl: "https://outrank.so/?via=leadstart",
   socialImage: "/opengraph-image",
 };
 
