@@ -32,9 +32,9 @@ export function AffiliateButton({
       data-affiliate-tool={toolName}
       data-affiliate-placement={placement}
       onClick={handleClick}
-      className="inline-flex items-center justify-center rounded-full border border-emerald-900 bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 active:bg-emerald-900"
+      className="cta-affiliate inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold shadow-sm transition focus:outline-none"
     >
-      {label}
+      <span className="cta-button-label">{label}</span>
     </a>
   );
 }
