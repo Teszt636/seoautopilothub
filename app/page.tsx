@@ -14,10 +14,10 @@ export const metadata = buildMetadata({
 });
 
 const primaryCtaClassName =
-  "inline-flex items-center justify-center rounded-full border border-slate-950 bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 active:bg-black";
+  "cta-primary inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold shadow-sm transition focus:outline-none";
 
 const secondaryCtaClassName =
-  "inline-flex items-center justify-center rounded-full border border-slate-400 bg-white px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-slate-600 hover:bg-slate-50 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2";
+  "cta-secondary inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold shadow-sm transition focus:outline-none";
 
 const audienceCards = [
   {
@@ -66,13 +66,13 @@ export default function Home() {
                 href="/ai-seo-automation-for-small-businesses"
                 className={primaryCtaClassName}
               >
-                Read the practical guide
+                <span className="cta-button-label">Read the practical guide</span>
               </Link>
               <Link
                 href="/outrank-so-review"
                 className={secondaryCtaClassName}
               >
-                See the Outrank.so review
+                <span className="cta-button-label">See the Outrank.so review</span>
               </Link>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function Home() {
                   href="/outrank-so-review"
                   className={secondaryCtaClassName}
                 >
-                  Read the full review
+                  <span className="cta-button-label">Read the full review</span>
                 </Link>
                 <AffiliateButton
                   href={siteConfig.affiliateUrl}
@@ -220,13 +220,13 @@ export default function Home() {
               href="/guides"
               className={primaryCtaClassName}
             >
-              Explore the guides
+              <span className="cta-button-label">Explore the guides</span>
             </Link>
             <Link
               href="/comparisons"
               className={secondaryCtaClassName}
             >
-              Compare tools
+              <span className="cta-button-label">Compare tools</span>
             </Link>
           </div>
         </PageSection>
