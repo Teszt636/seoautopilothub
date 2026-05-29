@@ -30,6 +30,9 @@ export type ArticleData = {
   audience: string;
   sections: ArticleSection[];
   faqs: FaqItem[];
+  contextText: string;
+  contextLinks: LinkItem[];
+  relatedReads: LinkItem[];
 };
 
 export const primaryNav: NavItem[] = [
@@ -62,10 +65,10 @@ export const guideLinks: LinkItem[] = [
     href: "/outrank-so-review",
   },
   {
-    title: "Best AI SEO Automation Tools for Small Businesses",
+    title: "How to Publish 30 SEO Articles per Month",
     description:
-      "A scaffolded comparison hub that can grow into a fuller tool evaluation resource.",
-    href: "/best-ai-seo-automation-tools-for-small-businesses",
+      "A practical publishing workflow for teams trying to scale content output without losing quality control.",
+    href: "/how-to-publish-30-seo-articles-per-month",
   },
 ];
 
@@ -110,19 +113,25 @@ export const articles: ArticleData[] = [
         title: "Where real estate content bottlenecks usually happen",
         paragraphs: [
           "Most agents know they should publish neighborhood pages, market updates, and buyer or seller guides. The problem is that listing activity, client communication, and lead follow-up push content to the bottom of the stack.",
-          "An automation workflow helps by giving each article a defined path from keyword target to draft to human review instead of treating every post as a one-off project.",
+          "An automation workflow helps by giving each article a defined path from keyword target to draft to human review instead of treating every post as a one-off project. For the broader planning model, the main guide to AI SEO automation for small businesses is a useful starting point.",
         ],
       },
       {
         title: "What to automate in the workflow",
         paragraphs: [
-          "Start with topic clustering around neighborhoods, transaction intent, and recurring customer questions. AI can help expand outlines, draft introductions, structure FAQs, and create consistent internal link suggestions.",
+          "Start with topic clustering around neighborhoods, transaction intent, and recurring customer questions. AI can help expand outlines, draft introductions, structure FAQs, and create consistent internal link suggestions. If you want a lean software-assisted option, the Outrank.so review covers where a dedicated workflow tool may fit.",
         ],
         bullets: [
           "Keyword grouping for local modifiers and intent",
           "Draft outlines for buyer, seller, and neighborhood pages",
           "Meta title and description suggestions",
           "Internal link prompts between market guides and service pages",
+        ],
+      },
+      {
+        title: "A workflow that keeps content moving",
+        paragraphs: [
+          "A simple operating rhythm is to plan topics monthly, outline the next batch weekly, and review drafts in a single block before they reach the CMS. That keeps local expertise in the process without turning publishing into a daily scramble.",
         ],
       },
       {
@@ -133,9 +142,15 @@ export const articles: ArticleData[] = [
         ],
       },
       {
+        title: "Common mistakes to avoid",
+        paragraphs: [
+          "The biggest trap is publishing generic neighborhood copy that could describe any market. Another is skipping internal links back to service pages, listing pages, or evergreen buyer and seller resources that help visitors move through the site.",
+        ],
+      },
+      {
         title: "A practical publishing cadence",
         paragraphs: [
-          "A manageable cadence for solo agents is one neighborhood article, one transactional guide, and one FAQ-based local post per week. That is enough to build topical coverage without overwhelming the business.",
+          "A manageable cadence for solo agents is one neighborhood article, one transactional guide, and one FAQ-based local post per week. That is enough to build topical coverage without overwhelming the business, and it lines up well with a publish-30-per-month workflow once more support is added.",
           "If the workflow is stable, an assistant or agency partner can handle formatting, imagery, and CMS upload while the agent focuses on review and local insight.",
         ],
       },
@@ -157,6 +172,42 @@ export const articles: ArticleData[] = [
           "Not necessarily. A steady weekly cadence with strong local relevance is usually more realistic and useful than daily low-quality output.",
       },
     ],
+    contextText:
+      "If you want to connect this playbook to a larger SEO system, pair it with the pillar guide, the local service autopilot framework, and the publishing cadence guide below.",
+    contextLinks: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "The broader operating model for lean SEO publishing teams.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "SEO Autopilot for Local Service Businesses",
+        description: "A practical framework for repeatable local-service publishing workflows.",
+        href: "/seo-autopilot-for-local-service-businesses",
+      },
+      {
+        title: "How to Publish 30 SEO Articles per Month",
+        description: "A scaling guide for turning a working process into a publishing engine.",
+        href: "/how-to-publish-30-seo-articles-per-month",
+      },
+    ],
+    relatedReads: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "Start with the core framework for what to automate and what to review manually.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "See where a workflow-focused AI SEO tool may fit into a lean publishing system.",
+        href: "/outrank-so-review",
+      },
+      {
+        title: "SEO Autopilot for Local Service Businesses",
+        description: "Use this guide to adapt the same operating principles to local-service sites.",
+        href: "/seo-autopilot-for-local-service-businesses",
+      },
+    ],
   },
   {
     slug: "automated-seo-content-for-cleaning-companies",
@@ -171,13 +222,13 @@ export const articles: ArticleData[] = [
         title: "Why cleaning companies struggle to publish",
         paragraphs: [
           "Owners and office managers are busy with scheduling, hiring, quoting, and customer service. Content creation usually depends on spare time that never appears.",
-          "That leads to thin websites with only a few core service pages and little local topical depth.",
+          "That leads to thin websites with only a few core service pages and little local topical depth. The broader AI SEO automation guide explains how to turn that situation into a more consistent publishing system.",
         ],
       },
       {
         title: "High-value topics to systemize",
         paragraphs: [
-          "Service-area pages, move-out cleaning guides, commercial cleaning FAQs, and pricing expectation articles are all strong candidates for automation support.",
+          "Service-area pages, move-out cleaning guides, commercial cleaning FAQs, and pricing expectation articles are all strong candidates for automation support. If you are comparing tooling options, the Outrank.so review is a reasonable next read before building a workflow around one platform.",
         ],
         bullets: [
           "House cleaning vs deep cleaning comparisons",
@@ -196,7 +247,13 @@ export const articles: ArticleData[] = [
       {
         title: "Operational workflow for a small team",
         paragraphs: [
-          "A simple workflow is monthly topic planning, weekly draft generation, and a final review by the owner or office lead. This makes publishing predictable without adding a full-time content role.",
+          "A simple workflow is monthly topic planning, weekly draft generation, and a final review by the owner or office lead. This makes publishing predictable without adding a full-time content role and fits well with a local-service SEO autopilot model.",
+        ],
+      },
+      {
+        title: "Common mistakes to avoid",
+        paragraphs: [
+          "Avoid publishing identical location pages with swapped city names, relying on vague pricing promises, or forgetting to connect blog posts back to service pages and quote-request CTAs. Those shortcuts weaken both relevance and trust.",
         ],
       },
     ],
@@ -217,6 +274,42 @@ export const articles: ArticleData[] = [
           "No. Rankings also depend on local relevance, internal linking, technical SEO, citations, reviews, and publishing consistency.",
       },
     ],
+    contextText:
+      "To make these ideas more sustainable, combine them with the pillar guide, the local service autopilot playbook, and a realistic publishing schedule.",
+    contextLinks: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "The full framework for building a lean content operation.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "SEO Autopilot for Local Service Businesses",
+        description: "A practical local-service workflow model that maps well to cleaning businesses.",
+        href: "/seo-autopilot-for-local-service-businesses",
+      },
+      {
+        title: "How to Publish 30 SEO Articles per Month",
+        description: "A publishing cadence guide for businesses planning to increase output.",
+        href: "/how-to-publish-30-seo-articles-per-month",
+      },
+    ],
+    relatedReads: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "See how automation fits alongside review, internal links, and technical SEO.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "Review a workflow-focused tool option for turning ideas into publishable drafts.",
+        href: "/outrank-so-review",
+      },
+      {
+        title: "SEO Autopilot for Local Service Businesses",
+        description: "Translate this cleaning-company workflow into a broader local-service content system.",
+        href: "/seo-autopilot-for-local-service-businesses",
+      },
+    ],
   },
   {
     slug: "seo-autopilot-for-local-service-businesses",
@@ -231,7 +324,7 @@ export const articles: ArticleData[] = [
         title: "The real meaning of SEO autopilot",
         paragraphs: [
           "For most small businesses, autopilot means semi-automated planning, drafting, and optimization with clear human checkpoints. It does not mean publishing large volumes of unchecked copy.",
-          "The strongest systems reduce repetitive work while preserving editorial control on brand fit, local accuracy, and conversion intent.",
+          "The strongest systems reduce repetitive work while preserving editorial control on brand fit, local accuracy, and conversion intent. For a broader breakdown of these principles, the main AI SEO automation guide is the best companion piece.",
         ],
       },
       {
@@ -244,6 +337,12 @@ export const articles: ArticleData[] = [
           "Template-based article and page creation",
           "Internal links to core service pages",
           "Monthly QA for outdated or underperforming content",
+        ],
+      },
+      {
+        title: "A workable weekly workflow",
+        paragraphs: [
+          "A practical weekly rhythm is to research one cluster, draft two to four supporting pages, review all local references in one pass, then publish with internal links back to core service pages. Teams that want software help can compare that manual approach with the Outrank.so review before deciding how much to automate.",
         ],
       },
       {
@@ -276,6 +375,42 @@ export const articles: ArticleData[] = [
           "Four to eight useful pages or articles per month is a solid starting range for many small teams.",
       },
     ],
+    contextText:
+      "This local-service guide works best as part of a broader cluster that includes the main automation guide, the publishing cadence article, and the Outrank review.",
+    contextLinks: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "Use the pillar guide to frame automation, review, and content planning decisions.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "How to Publish 30 SEO Articles per Month",
+        description: "Scale a working local-service system into a higher-output editorial rhythm.",
+        href: "/how-to-publish-30-seo-articles-per-month",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "Evaluate whether a dedicated workflow tool fits your local-service setup.",
+        href: "/outrank-so-review",
+      },
+    ],
+    relatedReads: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "Go deeper on what should be automated and what should stay manual.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "See how a workflow tool compares with a more manual local-service process.",
+        href: "/outrank-so-review",
+      },
+      {
+        title: "How to Publish 30 SEO Articles per Month",
+        description: "Use this guide when your local-service team is ready to scale output.",
+        href: "/how-to-publish-30-seo-articles-per-month",
+      },
+    ],
   },
   {
     slug: "ai-seo-tools-for-wordpress-blogs",
@@ -289,7 +424,7 @@ export const articles: ArticleData[] = [
       {
         title: "Why WordPress is well suited to AI-assisted workflows",
         paragraphs: [
-          "Most WordPress sites already support categories, internal links, editorial plugins, and page templates. That makes it easier to layer in topic planning and draft production workflows without rebuilding the stack.",
+          "Most WordPress sites already support categories, internal links, editorial plugins, and page templates. That makes it easier to layer in topic planning and draft production workflows without rebuilding the stack. The main automation guide gives the broader system behind that approach.",
         ],
       },
       {
@@ -311,9 +446,15 @@ export const articles: ArticleData[] = [
         ],
       },
       {
-        title: "A lean operating model",
+        title: "A lean WordPress workflow",
         paragraphs: [
-          "Many WordPress businesses can run with one person planning topics, one person reviewing drafts, and a simple checklist for formatting, links, and CTA placement before publishing.",
+          "Many WordPress businesses can run with one person planning topics, one person reviewing drafts, and a simple checklist for formatting, links, and CTA placement before publishing. If you need help choosing the workflow layer, the Outrank.so review is a practical comparison point.",
+        ],
+      },
+      {
+        title: "Common mistakes to avoid",
+        paragraphs: [
+          "Avoid stuffing categories with overlapping articles, publishing AI drafts without tightening formatting, or ignoring internal links between cornerstone guides and supporting posts. WordPress makes publishing easy, but the structure still has to be deliberate.",
         ],
       },
     ],
@@ -332,6 +473,42 @@ export const articles: ArticleData[] = [
         question: "Do WordPress blogs need internal links in AI content?",
         answer:
           "Yes. Internal linking is one of the most important parts of turning isolated articles into a stronger SEO system.",
+      },
+    ],
+    contextText:
+      "Use this WordPress-specific guide alongside the main automation guide, the scaling article, and the Outrank review when you are building a fuller content system.",
+    contextLinks: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "The core framework behind a lean publishing workflow.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "How to Publish 30 SEO Articles per Month",
+        description: "A batching model for teams that want to scale output on WordPress.",
+        href: "/how-to-publish-30-seo-articles-per-month",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "A practical look at one workflow-oriented AI SEO tool option.",
+        href: "/outrank-so-review",
+      },
+    ],
+    relatedReads: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "Connect your WordPress workflow to the bigger automation and review process.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "See where a dedicated tool might fit compared with a looser WordPress workflow.",
+        href: "/outrank-so-review",
+      },
+      {
+        title: "How to Publish 30 SEO Articles per Month",
+        description: "Turn a working WordPress process into a more scalable production schedule.",
+        href: "/how-to-publish-30-seo-articles-per-month",
       },
     ],
   },
@@ -353,7 +530,7 @@ export const articles: ArticleData[] = [
       {
         title: "Break production into stages",
         paragraphs: [
-          "The workload becomes manageable when one batch handles research, another handles outlines, another handles draft generation, and another handles QA and publishing.",
+          "The workload becomes manageable when one batch handles research, another handles outlines, another handles draft generation, and another handles QA and publishing. The core AI SEO automation guide is useful here because it explains which tasks are safe to speed up and which still need human review.",
         ],
         bullets: [
           "Week 1: topic clustering and keyword mapping",
@@ -365,7 +542,13 @@ export const articles: ArticleData[] = [
       {
         title: "Protect quality with checkpoints",
         paragraphs: [
-          "Use a review checklist for factual claims, internal links, search intent alignment, and CTA placement. AI makes throughput easier, but it does not replace editorial responsibility.",
+          "Use a review checklist for factual claims, internal links, search intent alignment, and CTA placement. AI makes throughput easier, but it does not replace editorial responsibility. If you want a workflow-focused tool to support that system, the Outrank.so review is a sensible next read.",
+        ],
+      },
+      {
+        title: "Common mistakes when scaling output",
+        paragraphs: [
+          "The biggest mistake is scaling article count before the topic map, internal links, and editorial review process are ready. Another is treating article volume as the strategy instead of using it to support a clear content architecture.",
         ],
       },
       {
@@ -390,6 +573,42 @@ export const articles: ArticleData[] = [
         question: "What matters more than article count?",
         answer:
           "Topic quality, internal linking, relevance to the business, and regular updating usually matter more than raw article volume.",
+      },
+    ],
+    contextText:
+      "This scaling guide works best when you pair it with the pillar guide, the local-service autopilot article, and a review of the workflow tools you may use.",
+    contextLinks: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "Clarify what can be automated before you increase publishing volume.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "SEO Autopilot for Local Service Businesses",
+        description: "Adapt a higher-output model to local-service SEO without losing relevance.",
+        href: "/seo-autopilot-for-local-service-businesses",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "See whether a workflow-focused tool could support your batching process.",
+        href: "/outrank-so-review",
+      },
+    ],
+    relatedReads: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "Use the pillar guide to decide what to automate before scaling volume.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "SEO Autopilot for Local Service Businesses",
+        description: "Apply the same publishing rhythm to local-service content systems.",
+        href: "/seo-autopilot-for-local-service-businesses",
+      },
+      {
+        title: "AI SEO Tools for WordPress Blogs",
+        description: "If you publish on WordPress, use this as the platform-specific follow-up.",
+        href: "/ai-seo-tools-for-wordpress-blogs",
       },
     ],
   },

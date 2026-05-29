@@ -2,7 +2,7 @@ import { ArticleLayout } from "@/components/article-layout";
 import { AffiliateButton } from "@/components/affiliate-button";
 import { AffiliateNote } from "@/components/affiliate-note";
 import { JsonLd } from "@/components/json-ld";
-import { ProseBlock } from "@/components/ui";
+import { ProseBlock, RecommendedReads } from "@/components/ui";
 import { buildBreadcrumbs } from "@/lib/content";
 import { buildMetadata, siteConfig } from "@/lib/site";
 
@@ -122,7 +122,7 @@ export default function PillarGuidePage() {
       <ProseBlock
         title="Best use cases"
         paragraphs={[
-          "This approach works especially well for local service businesses, small agencies, solo founders, and WordPress-based sites that need content momentum without a full editorial team.",
+          "This approach works especially well for local service businesses, small agencies, solo founders, and WordPress-based sites that need content momentum without a full editorial team. The local-service autopilot guide is a useful extension if your business depends on service-area coverage and recurring local questions.",
         ]}
       />
       <ProseBlock
@@ -134,8 +134,7 @@ export default function PillarGuidePage() {
       <ProseBlock
         title="Recommended tools"
         paragraphs={[
-          "The best tool stack depends on the team and workflow. Outrank.so is worth evaluating if your main need is a more repeatable AI-assisted SEO publishing system.",
-          "For transparency, this section may include affiliate links to tools we recommend in context.",
+          "The best tool stack depends on the team and workflow. Outrank.so is worth evaluating if your main need is a more repeatable AI-assisted SEO publishing system, while the publish-30-per-month guide can help you decide whether you are actually ready to scale output.",
         ]}
       />
       <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
@@ -165,6 +164,25 @@ export default function PillarGuidePage() {
         </div>
         <AffiliateNote className="mt-4" />
       </section>
+      <RecommendedReads
+        items={[
+          {
+            title: "Outrank.so Review",
+            description: "See how one workflow-focused tool fits into a lean SEO publishing system.",
+            href: "/outrank-so-review",
+          },
+          {
+            title: "How to Publish 30 SEO Articles per Month",
+            description: "Use this guide when you are ready to batch content without losing QA control.",
+            href: "/how-to-publish-30-seo-articles-per-month",
+          },
+          {
+            title: "AI SEO Tools for WordPress Blogs",
+            description: "Follow this with a platform-specific workflow if WordPress is your publishing stack.",
+            href: "/ai-seo-tools-for-wordpress-blogs",
+          },
+        ]}
+      />
     </ArticleLayout>
   );
 }
