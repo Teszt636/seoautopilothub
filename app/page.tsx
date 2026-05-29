@@ -1,7 +1,7 @@
 import Link from "next/link";
 
+import { AffiliateDisclosureNote, AffiliateNote } from "@/components/affiliate-note";
 import { AffiliateButton } from "@/components/affiliate-button";
-import { AffiliateNote } from "@/components/affiliate-note";
 import { CardGrid, PageSection } from "@/components/ui";
 import { articleCards, comparisonLinks, guideLinks } from "@/lib/content";
 import { buildMetadata, siteConfig } from "@/lib/site";
@@ -182,6 +182,7 @@ export default function Home() {
                   It works best when paired with topic planning, internal
                   linking, technical SEO, and human review before publishing.
                 </p>
+                <AffiliateDisclosureNote className="max-w-xl" />
               </div>
               <div className="flex flex-col gap-3">
                 <Link
