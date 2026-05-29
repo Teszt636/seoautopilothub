@@ -1,8 +1,8 @@
 import { AffiliateButton } from "@/components/affiliate-button";
-import { AffiliateDisclosureNote } from "@/components/affiliate-note";
+import { AffiliateNote } from "@/components/affiliate-note";
 import { ArticleLayout } from "@/components/article-layout";
 import { JsonLd } from "@/components/json-ld";
-import { ProseBlock } from "@/components/ui";
+import { ProseBlock, RecommendedReads } from "@/components/ui";
 import { buildBreadcrumbs } from "@/lib/content";
 import { buildMetadata, siteConfig } from "@/lib/site";
 
@@ -79,9 +79,6 @@ export default function OutrankReviewPage() {
           "Its strongest use case is helping teams publish more consistently. Its weakest use case is expecting the tool alone to replace strategy, editorial review, or broader SEO execution.",
         ]}
       />
-      <section className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm shadow-slate-200/50">
-        <AffiliateDisclosureNote />
-      </section>
       <ProseBlock
         title="What Outrank.so is"
         paragraphs={[
@@ -160,7 +157,7 @@ export default function OutrankReviewPage() {
       <ProseBlock
         title="When Outrank.so may not be enough"
         paragraphs={[
-          "It may not be enough when the site has poor technical SEO, weak service pages, no topical map, or no human capacity for review. In those cases, more output can just create more clutter.",
+          "It may not be enough when the site has poor technical SEO, weak service pages, no topical map, or no human capacity for review. In those cases, more output can just create more clutter, and the broader AI SEO automation guide is a better first stop than another tool signup.",
           "It is also not a complete substitute for SEO strategy when a business is entering a competitive market or trying to build authority in a complex niche.",
         ]}
       />
@@ -315,10 +312,27 @@ export default function OutrankReviewPage() {
             toolName="Outrank.so"
           />
         </div>
-        <p className="mt-4 text-sm font-medium leading-6 text-slate-300">
-          Use code <span className="text-white">LEADSTART</span>
-        </p>
+        <AffiliateNote className="mt-4 text-slate-300" />
       </section>
+      <RecommendedReads
+        items={[
+          {
+            title: "AI SEO Automation for Small Businesses",
+            description: "Start with the practical framework behind a sustainable AI-assisted publishing system.",
+            href: "/ai-seo-automation-for-small-businesses",
+          },
+          {
+            title: "How to Publish 30 SEO Articles per Month",
+            description: "Use this next if your team is deciding how far to scale content production.",
+            href: "/how-to-publish-30-seo-articles-per-month",
+          },
+          {
+            title: "SEO Autopilot for Local Service Businesses",
+            description: "See how the same workflow ideas apply to local-service content programs.",
+            href: "/seo-autopilot-for-local-service-businesses",
+          },
+        ]}
+      />
     </ArticleLayout>
   );
 }

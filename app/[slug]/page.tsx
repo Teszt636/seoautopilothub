@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ArticleLayout } from "@/components/article-layout";
 import { JsonLd } from "@/components/json-ld";
-import { ProseBlock } from "@/components/ui";
+import { ProseBlock, RecommendedReads } from "@/components/ui";
 import { articles, buildBreadcrumbs } from "@/lib/content";
 import { buildMetadata, siteConfig } from "@/lib/site";
 
@@ -80,6 +81,26 @@ export default async function ArticlePage({ params }: PageProps) {
           bullets={section.bullets}
         />
       ))}
+      <section className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm shadow-slate-200/50">
+        <p className="text-base leading-7 text-slate-700">
+          {article.contextText}{" "}
+          {article.contextLinks.map((link, index) => (
+            <span key={link.href}>
+              <Link
+                href={link.href}
+                className="font-medium text-slate-900 underline decoration-slate-300 underline-offset-4"
+              >
+                {link.title}
+              </Link>
+              {index < article.contextLinks.length - 2
+                ? ", "
+                : index === article.contextLinks.length - 2
+                  ? ", and "
+                  : "."}
+            </span>
+          ))}
+        </p>
+      </section>
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
         <h2 className="text-2xl font-semibold tracking-tight text-slate-950">FAQ</h2>
         <div className="mt-6 space-y-6">
@@ -91,6 +112,7 @@ export default async function ArticlePage({ params }: PageProps) {
           ))}
         </div>
       </section>
+      <RecommendedReads items={article.relatedReads} />
     </ArticleLayout>
   );
 }

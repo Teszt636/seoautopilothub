@@ -85,3 +85,25 @@ export function ProseBlock({
     </section>
   );
 }
+
+export function RecommendedReads({
+  title = "Recommended next reads",
+  intro,
+  items,
+}: {
+  title?: string;
+  intro?: string;
+  items: Array<{ title: string; description: string; href: string }>;
+}) {
+  return (
+    <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
+      <h2 className="text-2xl font-semibold tracking-tight text-slate-950">{title}</h2>
+      {intro ? (
+        <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">{intro}</p>
+      ) : null}
+      <div className="mt-6">
+        <CardGrid items={items} />
+      </div>
+    </section>
+  );
+}
