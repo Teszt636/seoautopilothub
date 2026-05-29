@@ -14,6 +14,7 @@ type MetadataInput = {
   description: string;
   path: string;
   type?: "website" | "article";
+  noIndex?: boolean;
 };
 
 export function absoluteUrl(path: string) {
@@ -25,6 +26,7 @@ export function buildMetadata({
   description,
   path,
   type = "website",
+  noIndex = false,
 }: MetadataInput): Metadata {
   const url = absoluteUrl(path);
 
@@ -55,5 +57,15 @@ export function buildMetadata({
       description,
       images: [absoluteUrl(siteConfig.socialImage)],
     },
+    robots: noIndex
+      ? {
+          index: false,
+          follow: true,
+          googleBot: {
+            index: false,
+            follow: true,
+          },
+        }
+      : undefined,
   };
 }

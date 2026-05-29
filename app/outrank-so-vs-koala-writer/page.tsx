@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
     "A comparison placeholder for teams evaluating Outrank.so against Koala Writer for SEO content workflows.",
   path: "/outrank-so-vs-koala-writer",
   type: "article",
+  noIndex: true,
 });
 
 export default function Page() {

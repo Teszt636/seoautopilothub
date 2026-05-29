@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
     "A scaffolded comparison page for agencies evaluating SEO autopilot and AI-assisted content workflow tools.",
   path: "/best-seo-autopilot-tools-for-agencies",
   type: "article",
+  noIndex: true,
 });
 
 export default function Page() {

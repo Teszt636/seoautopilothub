@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
     "An SEO-ready scaffold for evaluating the best AI SEO automation tools for small businesses.",
   path: "/best-ai-seo-automation-tools-for-small-businesses",
   type: "article",
+  noIndex: true,
 });
 
 export default function Page() {
