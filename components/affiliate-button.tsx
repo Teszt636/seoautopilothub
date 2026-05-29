@@ -32,7 +32,7 @@ export function AffiliateButton({
       data-affiliate-tool={toolName}
       data-affiliate-placement={placement}
       onClick={handleClick}
-      className="inline-flex items-center justify-center rounded-full border border-[var(--color-accent-strong)] bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--color-accent-strong)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2"
+      className="inline-flex items-center justify-center rounded-full border border-emerald-900 bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 active:bg-emerald-900"
     >
       {label}
     </a>

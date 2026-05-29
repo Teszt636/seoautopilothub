@@ -13,6 +13,12 @@ export const metadata = buildMetadata({
   path: "/",
 });
 
+const primaryCtaClassName =
+  "inline-flex items-center justify-center rounded-full border border-slate-950 bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 active:bg-black";
+
+const secondaryCtaClassName =
+  "inline-flex items-center justify-center rounded-full border border-slate-400 bg-white px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-slate-600 hover:bg-slate-50 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2";
+
 const audienceCards = [
   {
     title: "Local service businesses",
@@ -58,13 +64,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/ai-seo-automation-for-small-businesses"
-                className="inline-flex items-center justify-center rounded-full border border-slate-900 bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+                className={primaryCtaClassName}
               >
                 Read the practical guide
               </Link>
               <Link
                 href="/outrank-so-review"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400"
+                className={secondaryCtaClassName}
               >
                 See the Outrank.so review
               </Link>
@@ -180,7 +186,7 @@ export default function Home() {
               <div className="flex flex-col gap-3">
                 <Link
                   href="/outrank-so-review"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400"
+                  className={secondaryCtaClassName}
                 >
                   Read the full review
                 </Link>
@@ -212,13 +218,13 @@ export default function Home() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/guides"
-              className="inline-flex items-center justify-center rounded-full border border-slate-900 bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+              className={primaryCtaClassName}
             >
               Explore the guides
             </Link>
             <Link
               href="/comparisons"
-              className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400"
+              className={secondaryCtaClassName}
             >
               Compare tools
             </Link>
