@@ -4,14 +4,23 @@ type AffiliateNoteProps = {
 
 export function AffiliateNote({ className = "" }: AffiliateNoteProps) {
   return (
-    <div
-      className={`space-y-2 text-sm leading-6 text-slate-500 ${className}`.trim()}
+    <p
+      className={`text-sm font-medium leading-6 text-slate-500 ${className}`.trim()}
     >
-      <p>Use promo code LEADSTART if available.</p>
-      <p>
-        We may earn a commission if you sign up through our link, at no extra
-        cost to you.
-      </p>
-    </div>
+      Promo code: <span className="text-slate-700">LEADSTART</span>
+    </p>
+  );
+}
+
+export function AffiliateDisclosureNote({
+  className = "",
+}: AffiliateNoteProps) {
+  return (
+    <p
+      className={`text-sm leading-6 text-slate-500 ${className}`.trim()}
+    >
+      Disclosure: This page may contain affiliate links. If you sign up through
+      our link, we may earn a commission at no extra cost to you.
+    </p>
   );
 }

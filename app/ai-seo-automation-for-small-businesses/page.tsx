@@ -135,6 +135,7 @@ export default function PillarGuidePage() {
         title="Recommended tools"
         paragraphs={[
           "The best tool stack depends on the team and workflow. Outrank.so is worth evaluating if your main need is a more repeatable AI-assisted SEO publishing system.",
+          "For transparency, this section may include affiliate links to tools we recommend in context.",
         ]}
       />
       <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">

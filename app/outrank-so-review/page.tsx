@@ -1,5 +1,5 @@
 import { AffiliateButton } from "@/components/affiliate-button";
-import { AffiliateNote } from "@/components/affiliate-note";
+import { AffiliateDisclosureNote } from "@/components/affiliate-note";
 import { ArticleLayout } from "@/components/article-layout";
 import { JsonLd } from "@/components/json-ld";
 import { ProseBlock } from "@/components/ui";
@@ -79,6 +79,9 @@ export default function OutrankReviewPage() {
           "Its strongest use case is helping teams publish more consistently. Its weakest use case is expecting the tool alone to replace strategy, editorial review, or broader SEO execution.",
         ]}
       />
+      <section className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm shadow-slate-200/50">
+        <AffiliateDisclosureNote />
+      </section>
       <ProseBlock
         title="What Outrank.so is"
         paragraphs={[
@@ -312,7 +315,9 @@ export default function OutrankReviewPage() {
             toolName="Outrank.so"
           />
         </div>
-        <AffiliateNote className="mt-4 text-slate-300" />
+        <p className="mt-4 text-sm font-medium leading-6 text-slate-300">
+          Use code <span className="text-white">LEADSTART</span>
+        </p>
       </section>
     </ArticleLayout>
   );
