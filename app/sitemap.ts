@@ -9,6 +9,7 @@ const staticRoutes = [
   "/reviews",
   "/outrank-so-review",
   "/ai-seo-automation-for-small-businesses",
+  "/best-ai-seo-automation-tools-for-small-businesses",
   "/best-seo-autopilot-tools-for-agencies",
   "/about",
   "/affiliate-disclosure",
