@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import { ArticleLayout } from "@/components/article-layout";
-import { CardGrid } from "@/components/ui";
-import { articleCards, guideLinks } from "@/lib/content";
+import { CardGrid, PageSection } from "@/components/ui";
+import { articleCards, guideArticleCards, guideLinks } from "@/lib/content";
 import { buildMetadata } from "@/lib/site";
 
 export const metadata = buildMetadata({
@@ -17,7 +17,7 @@ export default function GuidesIndexPage() {
     <ArticleLayout
       eyebrow="Guides"
       title="Practical guides for AI SEO automation"
-      intro="These guides focus on usable workflows for smaller teams that need to publish more consistently without relying on hype or fully automated shortcuts."
+      intro="This guide hub brings together cornerstone pages and reviewed workflow articles so the site can grow in a structured way instead of becoming a random blog archive."
     >
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
         <p className="text-base leading-7 text-slate-700">
@@ -36,7 +36,37 @@ export default function GuidesIndexPage() {
           help connect strategy, workflow, and output planning.
         </p>
       </section>
-      <CardGrid items={[...guideLinks, ...articleCards]} />
+      <section className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm shadow-slate-200/50">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+          Guide hub
+        </p>
+        <p className="mt-4 text-base leading-7 text-slate-700">
+          Use the main pages for broader strategy, then move into the dedicated guide articles
+          under <span className="font-medium text-slate-900">/guides/[slug]</span> for focused,
+          review-ready publishing tests.
+        </p>
+      </section>
+      <PageSection
+        eyebrow="Core guides"
+        title="Main guide pages"
+        intro="These are the existing cornerstone pages that should stay as clean top-level URLs."
+      >
+        <CardGrid items={guideLinks} />
+      </PageSection>
+      <PageSection
+        eyebrow="Guide articles"
+        title="Dedicated guide articles"
+        intro="These indexable guide URLs are designed for reviewed Outrank-style publishing tests and future expansion."
+      >
+        <CardGrid items={guideArticleCards} />
+      </PageSection>
+      <PageSection
+        eyebrow="Supporting reads"
+        title="Existing long-tail articles"
+        intro="These top-level pages remain available while the new `/guides/[slug]` structure is introduced."
+      >
+        <CardGrid items={articleCards} />
+      </PageSection>
     </ArticleLayout>
   );
 }

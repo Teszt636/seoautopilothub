@@ -35,6 +35,56 @@ export type ArticleData = {
   relatedReads: LinkItem[];
 };
 
+export type PublishingStatus = "published" | "draft";
+
+export type GuideSection = {
+  title: string;
+  paragraphs: string[];
+  bullets?: string[];
+};
+
+export type GuideTableBlock = {
+  title: string;
+  intro?: string;
+  columns: string[];
+  rows: string[][];
+};
+
+export type GuideChecklistBlock = {
+  title: string;
+  intro?: string;
+  items: string[];
+};
+
+export type GuideAffiliateCta = {
+  title: string;
+  description: string;
+  label: string;
+  href: string;
+};
+
+export type GuideArticleData = {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  category: string;
+  eyebrow: string;
+  status: PublishingStatus;
+  noIndex: boolean;
+  publishedAt: string;
+  updatedAt: string;
+  quickAnswer?: string;
+  sections: GuideSection[];
+  faqs: FaqItem[];
+  internalLinks: LinkItem[];
+  recommendedReads: LinkItem[];
+  affiliateCta?: GuideAffiliateCta;
+  tableBlocks?: GuideTableBlock[];
+  checklistBlocks?: GuideChecklistBlock[];
+};
+
 export const primaryNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Guides", href: "/guides" },
@@ -614,11 +664,257 @@ export const articles: ArticleData[] = [
   },
 ];
 
+export const guideArticles: GuideArticleData[] = [
+  {
+    slug: "ai-seo-automation-for-plumbers",
+    title: "AI SEO Automation for Plumbers: A Practical Content Workflow",
+    metaTitle: "AI SEO Automation for Plumbers: A Practical Content Workflow",
+    metaDescription:
+      "A practical guide to using AI-assisted SEO workflows for plumbing companies without publishing unchecked or overly broad content.",
+    intro:
+      "Plumbing businesses usually know the services they want to promote, but not how to turn that knowledge into a steady publishing workflow. A reviewed AI-assisted guide system can help move from ideas to useful drafts without making unrealistic ranking claims.",
+    category: "Local service workflows",
+    eyebrow: "Guide",
+    status: "published",
+    noIndex: false,
+    publishedAt: "2026-06-01",
+    updatedAt: "2026-06-01",
+    quickAnswer:
+      "Use AI to batch topic outlines, first drafts, and internal-link suggestions for plumbing service content, then review every article for service accuracy, city relevance, and conversion clarity before publishing.",
+    sections: [
+      {
+        title: "Where plumbing teams usually get stuck",
+        paragraphs: [
+          "Most plumbing companies already know the topics customers ask about: drain problems, water heater issues, emergency response, pricing questions, and service-area coverage. The real bottleneck is turning those topics into a consistent editorial workflow.",
+          "A clean guide system helps by keeping each article attached to a clear topic, review pass, and internal linking plan instead of publishing scattered drafts whenever someone has time.",
+        ],
+      },
+      {
+        title: "A workable AI-assisted publishing flow",
+        paragraphs: [
+          "Start with a monthly topic batch tied to real services and service areas. From there, use AI to create structured outlines, draft the first version, and suggest internal links back to core plumbing pages.",
+        ],
+        bullets: [
+          "Group topics by service intent such as repairs, maintenance, and installation",
+          "Draft short briefs with target audience, local angle, and CTA goal",
+          "Review claims about emergency service, pricing, and timelines before publishing",
+          "Link each guide back to the most relevant service or booking page",
+        ],
+      },
+      {
+        title: "What still needs manual review",
+        paragraphs: [
+          "Plumbing businesses should manually verify availability claims, licensing references, warranty language, and local service details. AI can speed up structure, but it should not invent operational promises or city-specific proof.",
+          "This is also where a short editorial pass improves trust: add real examples, tighten the CTA, and remove generic filler that does not help the reader choose the next step.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can plumbers publish AI-written SEO articles directly?",
+        answer:
+          "It is safer to review every draft before publishing so service claims, locations, and CTAs stay accurate.",
+      },
+      {
+        question: "What plumbing topics are easiest to systemize?",
+        answer:
+          "Service explainers, maintenance guides, pricing expectation pages, and recurring customer FAQs are usually the strongest starting points.",
+      },
+    ],
+    internalLinks: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "The broader framework for what to automate and what to review manually.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "SEO Autopilot for Local Service Businesses",
+        description: "A local-service publishing model that maps well to plumbing companies.",
+        href: "/seo-autopilot-for-local-service-businesses",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "A practical look at one workflow-oriented publishing tool.",
+        href: "/outrank-so-review",
+      },
+    ],
+    recommendedReads: [
+      {
+        title: "How to Publish 30 SEO Articles per Month",
+        description: "Scale a working content process only after the review system is stable.",
+        href: "/how-to-publish-30-seo-articles-per-month",
+      },
+      {
+        title: "Best AI SEO Automation Tools for Small Businesses",
+        description: "Compare tooling options before committing to a publishing workflow.",
+        href: "/best-ai-seo-automation-tools-for-small-businesses",
+      },
+    ],
+    affiliateCta: {
+      title: "Test the workflow before scaling volume",
+      description:
+        "If you trial an AI-assisted publishing tool, keep the first batch small and review each draft for factual accuracy and local relevance before expanding.",
+      label: "Read the Outrank.so review",
+      href: "/outrank-so-review",
+    },
+    tableBlocks: [
+      {
+        title: "Suggested plumbing guide mix",
+        intro: "A small, controlled batch is enough to validate the workflow.",
+        columns: ["Guide type", "Purpose", "Review focus"],
+        rows: [
+          ["Service explainer", "Support core plumbing pages", "Accuracy of service claims"],
+          ["FAQ guide", "Capture common search questions", "Clarity and helpfulness"],
+          ["Local workflow article", "Strengthen regional relevance", "Real service-area fit"],
+        ],
+      },
+    ],
+    checklistBlocks: [
+      {
+        title: "Pre-publish checklist",
+        items: [
+          "Confirm the slug is lowercase and matches the topic cleanly",
+          "Review service promises, time-sensitive claims, and location references",
+          "Add internal links to relevant service or contact pages",
+          "Check that the CTA reflects the actual next step for customers",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "seo-content-workflow-for-small-agencies",
+    title: "SEO Content Workflow for Small Agencies Using AI",
+    metaTitle: "SEO Content Workflow for Small Agencies Using AI",
+    metaDescription:
+      "A practical guide to building an AI-assisted SEO content workflow for small agencies without losing editorial control.",
+    intro:
+      "Small agencies often need more publishing capacity before they need more complexity. A clean AI-assisted workflow can help agencies move faster on briefs and draft production while keeping review, QA, and client fit under control.",
+    category: "Agency workflows",
+    eyebrow: "Guide",
+    status: "published",
+    noIndex: false,
+    publishedAt: "2026-06-01",
+    updatedAt: "2026-06-01",
+    quickAnswer:
+      "The most reliable agency workflow uses AI for planning support and first drafts, then routes every piece through a light QA checklist for intent, claims, internal links, and client-specific positioning.",
+    sections: [
+      {
+        title: "Why agencies need a tighter workflow than solo publishers",
+        paragraphs: [
+          "Agencies are balancing client expectations, approvals, internal deadlines, and repeatable delivery. That means the content process has to be organized enough for handoffs, not just fast enough to create drafts.",
+          "A dedicated guide route is useful here because it keeps content grouped in one clean area while the team tests a publishing workflow that could later scale.",
+        ],
+      },
+      {
+        title: "What AI should handle first",
+        paragraphs: [
+          "The safest starting point is to automate repetitive preparation work. Use AI for topic expansion, outline creation, first drafts, and internal-link suggestions rather than for unchecked publishing.",
+        ],
+        bullets: [
+          "Build topic clusters from client services and recurring questions",
+          "Create article briefs with search intent and CTA notes",
+          "Generate first drafts that follow the brief structure",
+          "Run a final human QA pass before publication",
+        ],
+      },
+      {
+        title: "A lean review layer for client work",
+        paragraphs: [
+          "Every article should be reviewed for factual claims, tone fit, and internal linking. Agencies should also remove generic statements that do not reflect the client business or niche reality.",
+          "That review stage is where the workflow becomes commercially usable instead of just operationally fast.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can a small agency use AI without publishing low-quality content?",
+        answer:
+          "Yes, if AI is used for draft support and every article still goes through a clear human QA process.",
+      },
+      {
+        question: "What is the biggest agency risk with AI SEO content?",
+        answer:
+          "Publishing generic copy or unchecked claims that do not match the client business is usually the biggest risk.",
+      },
+    ],
+    internalLinks: [
+      {
+        title: "Best SEO Autopilot Tools for Agencies",
+        description: "A comparison-oriented page for agencies evaluating workflow options.",
+        href: "/best-seo-autopilot-tools-for-agencies",
+      },
+      {
+        title: "How to Publish 30 SEO Articles per Month",
+        description: "A batching model for agencies planning to increase output.",
+        href: "/how-to-publish-30-seo-articles-per-month",
+      },
+      {
+        title: "Outrank.so Review",
+        description: "A balanced review of a workflow-first SEO publishing tool.",
+        href: "/outrank-so-review",
+      },
+    ],
+    recommendedReads: [
+      {
+        title: "AI SEO Automation for Small Businesses",
+        description: "Use the core guide to align automation with review discipline.",
+        href: "/ai-seo-automation-for-small-businesses",
+      },
+      {
+        title: "Best AI SEO Automation Tools for Small Businesses",
+        description: "Compare tools and workflow tradeoffs from a buyer's perspective.",
+        href: "/best-ai-seo-automation-tools-for-small-businesses",
+      },
+    ],
+    tableBlocks: [
+      {
+        title: "Simple agency handoff model",
+        columns: ["Stage", "Owner", "Output"],
+        rows: [
+          ["Topic planning", "Strategist", "Approved brief list"],
+          ["Draft production", "AI-assisted writer", "First draft with structure"],
+          ["QA and publish", "Editor or account lead", "Reviewed article ready for CMS"],
+        ],
+      },
+    ],
+    checklistBlocks: [
+      {
+        title: "Agency QA checklist",
+        intro: "A short checklist is usually enough to keep the first test controlled.",
+        items: [
+          "Check the article against the client brief and search intent",
+          "Remove unverified claims or overstated outcomes",
+          "Verify internal links and CTA destination",
+          "Confirm metadata and canonical URL before publishing",
+        ],
+      },
+    ],
+  },
+];
+
 export const articleCards: LinkItem[] = articles.map((article) => ({
   title: article.title,
   description: article.metaDescription,
   href: `/${article.slug}`,
 }));
+
+export const publishedGuideArticles = guideArticles.filter(
+  (article) => article.status === "published" && !article.noIndex,
+);
+
+export const guideArticleCards: LinkItem[] = publishedGuideArticles.map((article) => ({
+  title: article.title,
+  description: article.metaDescription,
+  href: `/guides/${article.slug}`,
+}));
+
+export function getGuideArticle(slug: string) {
+  return guideArticles.find((article) => article.slug === slug);
+}
+
+export function isGuideArticlePublic(article: GuideArticleData) {
+  return article.status === "published" && !article.noIndex;
+}
 
 export function buildBreadcrumbs(
   items: Array<{ name: string; path: string }>,

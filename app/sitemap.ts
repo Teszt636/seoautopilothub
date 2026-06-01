@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { articles } from "@/lib/content";
+import { articles, publishedGuideArticles } from "@/lib/content";
 import { absoluteUrl } from "@/lib/site";
 
 const staticRoutes = [
@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.75,
+    })),
+    ...publishedGuideArticles.map((article) => ({
+      url: absoluteUrl(`/guides/${article.slug}`),
+      lastModified: new Date(article.updatedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.72,
     })),
   ];
 }
