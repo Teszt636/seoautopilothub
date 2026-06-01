@@ -11,8 +11,14 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const explicitArticleRoutes = new Set([
+  "seo-autopilot-for-local-service-businesses",
+]);
+
 export async function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+  return articles
+    .filter((article) => !explicitArticleRoutes.has(article.slug))
+    .map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
