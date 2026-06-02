@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Contact",
   description:
-    "Contact placeholder page for SEOAutopilotHub.",
+    "Contact information and support expectations for SEOAutopilotHub.",
   path: "/contact",
 });
 
@@ -14,12 +14,15 @@ export default function ContactPage() {
     <ArticleLayout
       eyebrow="Contact"
       title="Contact"
-      intro="This is a placeholder contact page that can later be replaced with a form, email address, or newsletter signup workflow."
+      intro="SEOAutopilotHub is currently an informational affiliate content site and does not offer direct consulting, support, or custom SEO services through this website."
     >
       <ProseBlock
-        title="Contact placeholder"
+        title="How to use this page"
         paragraphs={[
-          "If you plan to add outreach, newsletter capture, or consulting inquiries later, this page is ready to be extended with the preferred contact method.",
+          "No contact form is provided on this site, and the website is not set up as a lead generation or client intake channel.",
+          "SEOAutopilotHub is also not the official support channel for Outrank.so or any other third-party tool mentioned in the content.",
+          "If you need product-specific support, billing help, or account assistance, please contact the tool provider directly through its official website or support channels.",
+          "For additional transparency information, see the Affiliate Disclosure, Privacy Policy, and About pages linked in the footer.",
         ]}
       />
     </ArticleLayout>

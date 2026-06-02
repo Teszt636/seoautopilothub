@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Privacy Policy",
   description:
-    "Read the privacy policy for SEOAutopilotHub.",
+    "Read the privacy policy for SEOAutopilotHub, including how analytics and affiliate tracking may be used.",
   path: "/privacy-policy",
 });
 
@@ -14,14 +14,41 @@ export default function PrivacyPolicyPage() {
     <ArticleLayout
       eyebrow="Privacy"
       title="Privacy Policy"
-      intro="This privacy policy is a placeholder foundation for the site and should be reviewed before launch if analytics, email capture, or third-party scripts are added."
+      intro="This policy explains the limited types of data SEOAutopilotHub may collect as an informational affiliate content site."
     >
       <ProseBlock
-        title="What this policy currently covers"
+        title="What the site does not currently do"
         paragraphs={[
-          "SEOAutopilotHub may collect basic information that users voluntarily provide through future contact or newsletter forms.",
-          "The site may also use standard analytics or affiliate tracking technologies in the future to understand usage and link activity.",
-          "Before launch, this policy should be updated to reflect the exact analytics, email, cookie, and tracking tools that are installed.",
+          "SEOAutopilotHub does not currently use contact forms, account registration, comments, or newsletter signup forms on this website.",
+          "Because of that, the site does not intentionally collect names, email addresses, phone numbers, or other personal information that users would normally submit through on-site forms.",
+        ]}
+      />
+      <ProseBlock
+        title="Technical and usage data"
+        paragraphs={[
+          "The site may still collect limited technical or usage data through analytics tools such as Google Analytics. This can include information such as pages viewed, general device or browser information, approximate location data, referral source data, and interactions with the site.",
+          "This kind of data is typically used to understand site performance, traffic patterns, and which content is most useful to readers.",
+        ]}
+      />
+      <ProseBlock
+        title="Affiliate links and third-party tracking"
+        paragraphs={[
+          "Some pages may include affiliate links. Those links may use tracking parameters, cookies, or similar technologies, often on third-party websites rather than directly on SEOAutopilotHub itself.",
+          "If you click an affiliate link, you may be taken to a third-party site with its own privacy practices and policies. SEOAutopilotHub does not control how those third parties collect or process data after you leave this site.",
+        ]}
+      />
+      <ProseBlock
+        title="Cookies and user control"
+        paragraphs={[
+          "Your browser may allow you to control or block cookies through its settings. You can also clear existing cookies there if you prefer.",
+          "Disabling some cookies may affect how analytics or affiliate attribution works, but you can still browse the site content.",
+        ]}
+      />
+      <ProseBlock
+        title="Data sales and policy updates"
+        paragraphs={[
+          "SEOAutopilotHub does not sell personal data.",
+          "If analytics tools, tracking technologies, or other data collection features change in the future, this policy may be updated to reflect those changes more accurately.",
         ]}
       />
     </ArticleLayout>
