@@ -15,6 +15,8 @@ const staticRoutes = [
   "/affiliate-disclosure",
   "/privacy-policy",
   "/contact",
+  "/outrank-so-vs-surfer-seo",
+  "/outrank-so-vs-koala-writer",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
