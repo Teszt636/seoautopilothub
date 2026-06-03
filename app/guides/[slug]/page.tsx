@@ -10,28 +10,51 @@ import {
   isGuideArticlePublic,
   publishedGuideArticles,
 } from "@/lib/content";
+import {
+  getPublishedOutrankGuideArticle,
+  getPublishedOutrankGuideSummaries,
+} from "@/lib/outrank";
 import { absoluteUrl, buildMetadata, siteConfig } from "@/lib/site";
+
+export const revalidate = 86400;
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return publishedGuideArticles.map((article) => ({ slug: article.slug }));
+export async function generateStaticParams() {
+  const manualParams = publishedGuideArticles.map((article) => ({ slug: article.slug }));
+  const manualSlugs = new Set(manualParams.map((article) => article.slug));
+  const outrankParams = (await getPublishedOutrankGuideSummaries())
+    .filter((article) => !manualSlugs.has(article.slug))
+    .map((article) => ({ slug: article.slug }));
+
+  return [...manualParams, ...outrankParams];
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const article = getGuideArticle(slug);
 
-  if (!article || !isGuideArticlePublic(article)) {
+  if (article && isGuideArticlePublic(article)) {
+    return buildMetadata({
+      title: article.metaTitle,
+      description: article.metaDescription,
+      path: `/guides/${article.slug}`,
+      type: "article",
+    });
+  }
+
+  const outrankArticle = await getPublishedOutrankGuideArticle(slug);
+
+  if (!outrankArticle) {
     return {};
   }
 
   return buildMetadata({
-    title: article.metaTitle,
-    description: article.metaDescription,
-    path: `/guides/${article.slug}`,
+    title: outrankArticle.title,
+    description: outrankArticle.metaDescription,
+    path: `/guides/${outrankArticle.slug}`,
     type: "article",
   });
 }
@@ -41,7 +64,7 @@ export default async function GuideArticlePage({ params }: PageProps) {
   const article = getGuideArticle(slug);
 
   if (!article || !isGuideArticlePublic(article)) {
-    notFound();
+    return <OutrankGuideArticlePage slug={slug} />;
   }
 
   const articleUrl = absoluteUrl(`/guides/${article.slug}`);
@@ -224,6 +247,84 @@ export default async function GuideArticlePage({ params }: PageProps) {
       <RecommendedReads
         items={article.recommendedReads}
         intro="Use these pages to connect the guide to the main review, workflow, and comparison content on the site."
+      />
+    </ArticleLayout>
+  );
+}
+
+async function OutrankGuideArticlePage({ slug }: { slug: string }) {
+  const article = await getPublishedOutrankGuideArticle(slug);
+
+  if (!article) {
+    notFound();
+  }
+
+  const articleUrl = absoluteUrl(`/guides/${article.slug}`);
+
+  return (
+    <ArticleLayout eyebrow="Guide" title={article.title} intro={article.intro}>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: article.title,
+          description: article.metaDescription,
+          articleSection: article.tags.join(", ") || "Guides",
+          datePublished: article.publishedAt,
+          dateModified: article.updatedAt,
+          mainEntityOfPage: articleUrl,
+          image: article.imageUrl,
+          author: { "@type": "Organization", name: siteConfig.name },
+          publisher: { "@type": "Organization", name: siteConfig.name },
+        }}
+      />
+      <JsonLd
+        data={buildBreadcrumbs([
+          { name: "Home", path: "/" },
+          { name: "Guides", path: "/guides" },
+          { name: article.title, path: `/guides/${article.slug}` },
+        ])}
+      />
+      {article.faqs.length ? (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: article.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }}
+        />
+      ) : null}
+
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
+        <div className="flex flex-wrap gap-3 text-sm text-slate-600">
+          {article.readingTimeMinutes ? <span>{article.readingTimeMinutes} min read</span> : null}
+          <span>Updated {new Date(article.updatedAt).toLocaleDateString("en-US")}</span>
+        </div>
+        {article.imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={article.imageUrl}
+            alt=""
+            className="mt-6 aspect-[16/9] w-full rounded-2xl object-cover"
+            loading="lazy"
+          />
+        ) : null}
+        <div
+          className="outrank-article-content mt-6"
+          dangerouslySetInnerHTML={{ __html: article.html }}
+        />
+      </section>
+
+      <RecommendedReads
+        items={article.recommendedReads}
+        intro="Use these pages to connect the article to the main review and SEO automation strategy content."
       />
     </ArticleLayout>
   );

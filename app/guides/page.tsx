@@ -3,7 +3,10 @@ import Link from "next/link";
 import { ArticleLayout } from "@/components/article-layout";
 import { CardGrid, PageSection } from "@/components/ui";
 import { articleCards, guideArticleCards, guideLinks } from "@/lib/content";
+import { getPublishedOutrankGuideSummaries } from "@/lib/outrank";
 import { buildMetadata } from "@/lib/site";
+
+export const revalidate = 86400;
 
 export const metadata = buildMetadata({
   title: "Guides",
@@ -12,7 +15,9 @@ export const metadata = buildMetadata({
   path: "/guides",
 });
 
-export default function GuidesIndexPage() {
+export default async function GuidesIndexPage() {
+  const outrankGuideCards = await getPublishedOutrankGuideSummaries();
+
   return (
     <ArticleLayout
       eyebrow="Guides"
@@ -60,6 +65,15 @@ export default function GuidesIndexPage() {
       >
         <CardGrid items={guideArticleCards} />
       </PageSection>
+      {outrankGuideCards.length ? (
+        <PageSection
+          eyebrow="Published from Outrank"
+          title="Latest published guide articles"
+          intro="These published Outrank articles are loaded server-side and rendered under the same `/guides/[slug]` URL structure."
+        >
+          <CardGrid items={outrankGuideCards} />
+        </PageSection>
+      ) : null}
       <PageSection
         eyebrow="Supporting reads"
         title="Existing long-tail articles"

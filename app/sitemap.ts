@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
 
 import { articles, publishedGuideArticles } from "@/lib/content";
+import { getPublishedOutrankGuideSummaries } from "@/lib/outrank";
 import { absoluteUrl } from "@/lib/site";
+
+export const revalidate = 86400;
 
 const staticRoutes = [
   "/",
@@ -19,8 +22,12 @@ const staticRoutes = [
   "/outrank-so-vs-koala-writer",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
+  const manualGuideSlugs = new Set(publishedGuideArticles.map((article) => article.slug));
+  const outrankGuideArticles = (await getPublishedOutrankGuideSummaries()).filter(
+    (article) => !manualGuideSlugs.has(article.slug),
+  );
 
   return [
     ...staticRoutes.map((path) => ({
@@ -40,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(article.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.72,
+    })),
+    ...outrankGuideArticles.map((article) => ({
+      url: absoluteUrl(`/guides/${article.slug}`),
+      lastModified: new Date(article.updatedAt),
+      changeFrequency: "daily" as const,
+      priority: 0.7,
     })),
   ];
 }
